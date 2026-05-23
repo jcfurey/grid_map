@@ -3,6 +3,10 @@ project(grid_map_pcl)
 
 find_package(ament_cmake_auto REQUIRED)
 find_package(grid_map_cmake_helpers REQUIRED)
+# VTK 9.5 (bundled with PCL 1.15) re-exports JsonCpp::JsonCpp / MPI::MPI_C
+# without pulling their find modules itself. Bring them in first.
+find_package(jsoncpp REQUIRED)
+find_package(MPI REQUIRED COMPONENTS C)
 find_package(PCL REQUIRED)
 
 find_package(OpenMP QUIET)

@@ -193,8 +193,8 @@ double GridMapPclLoader::calculateElevationFromPointsInsideGridMapCell(
   std::vector<double> clusterHeights(clusterClouds.size());
   std::transform(
     clusterClouds.begin(), clusterClouds.end(), clusterHeights.begin(),
-    [](Pointcloud::ConstPtr cloud) -> double {
-      return grid_map_pcl::calculateMeanOfPointPositions(cloud).z();
+    [](Pointcloud::ConstPtr cluster_cloud) -> double {
+      return grid_map_pcl::calculateMeanOfPointPositions(cluster_cloud).z();
     });
 
   double height;
