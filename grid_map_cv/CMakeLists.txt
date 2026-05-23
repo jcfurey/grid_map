@@ -43,6 +43,8 @@ add_library(${PROJECT_NAME} SHARED
   src/InpaintFilter.cpp
 )
 
+target_compile_options(${PROJECT_NAME} PRIVATE -Wno-error=reorder)
+
 target_link_libraries(${PROJECT_NAME} PUBLIC
   cv_bridge::cv_bridge
   grid_map_core::grid_map_core

@@ -438,11 +438,11 @@ bool getBufferRegionsForSubmap(
           bottomLeftIndex, bottomLeftSize,
           BufferRegion::Quadrant::BottomLeft));
 
-      Index bottomRightIndex = Index::Zero();
+      Index brIndex = Index::Zero();
       Size bottomRightSize(bottomLeftSize(0), topRightSize(1));
       submapBufferRegions.push_back(
         BufferRegion(
-          bottomRightIndex, bottomRightSize,
+          brIndex, bottomRightSize,
           BufferRegion::Quadrant::BottomRight));
       return true;
     }
@@ -462,11 +462,11 @@ bool getBufferRegionsForSubmap(
           submapIndex, topRightSize,
           BufferRegion::Quadrant::TopRight));
 
-      Index bottomRightIndex(0, submapIndex(1));
+      Index brIndex(0, submapIndex(1));
       Size bottomRightSize(submapBufferSize(0) - topRightSize(0), submapBufferSize(1));
       submapBufferRegions.push_back(
         BufferRegion(
-          bottomRightIndex, bottomRightSize,
+          brIndex, bottomRightSize,
           BufferRegion::Quadrant::BottomRight));
       return true;
     }
@@ -486,11 +486,11 @@ bool getBufferRegionsForSubmap(
           submapIndex, bottomLeftSize,
           BufferRegion::Quadrant::BottomLeft));
 
-      Index bottomRightIndex(submapIndex(0), 0);
+      Index brIndex(submapIndex(0), 0);
       Size bottomRightSize(submapBufferSize(0), submapBufferSize(1) - bottomLeftSize(1));
       submapBufferRegions.push_back(
         BufferRegion(
-          bottomRightIndex, bottomRightSize,
+          brIndex, bottomRightSize,
           BufferRegion::Quadrant::BottomRight));
       return true;
     }
