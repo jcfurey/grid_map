@@ -12,10 +12,11 @@
   <url type="bugtracker">http://github.com/anybotics/grid_map/issues</url>
   <author email="pfankhauser@anybotics.com">Péter Fankhauser</author>
   
-  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
   <build_depend>grid_map_cmake_helpers</build_depend>
-  
+
   <depend>cv_bridge</depend>
+  <depend>filters</depend>
   <depend>geometry_msgs</depend>
   <depend>grid_map_core</depend>
   <depend>grid_map_cv</depend>
